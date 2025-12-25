@@ -30,9 +30,11 @@ def draw_branch(turtle: Turtle, level, branch_length):
 def draw_pythagorean_tree(level, length):
     window = Screen()
     window.bgcolor("white")
+    window.tracer(0)
 
     # Initial setup
     turtle = Turtle()
+    turtle.hideturtle()
     turtle.speed(0)
     turtle.color("green")
 
@@ -42,7 +44,7 @@ def draw_pythagorean_tree(level, length):
     turtle.down()
 
     draw_branch(turtle, level, length)
-
+    window.update()
     window.mainloop()
 
 
