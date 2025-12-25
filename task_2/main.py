@@ -44,6 +44,7 @@ def draw_pythagorean_tree(level, length):
     turtle.down()
 
     draw_branch(turtle, level, length)
+
     window.update()
     window.mainloop()
 
