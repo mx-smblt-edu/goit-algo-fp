@@ -42,17 +42,20 @@ def draw_tree(tree_root):
     plt.show()
 
 
-def main():
-    # Створення дерева
-    root = Node(0)
-    root.left = Node(4)
-    root.left.left = Node(5)
-    root.left.right = Node(10)
-    root.right = Node(1)
-    root.right.left = Node(3)
+def create_heap(arr):
+    nodes = [Node(key) for key in arr]
+    for i in range(len(nodes) // 2):
+        if 2 * i + 1 < len(nodes):
+            nodes[i].left = nodes[2 * i + 1]
+        if 2 * i + 2 < len(nodes):
+            nodes[i].right = nodes[2 * i + 2]
+    return nodes[0]
 
-    # Відображення дерева
-    draw_tree(root)
+
+def main():
+    heap_array = [10, 9, 8, 6, 7, 5, 4]
+    heap_root = create_heap(heap_array)
+    draw_tree(heap_root)
 
 
 if __name__ == "__main__":
