@@ -31,13 +31,12 @@ class LinkedList:
 
     def print_list(self):
         current = self.head
-        print("head")
         while current:
             print(current.data)
             current = current.next
-        print("tail")
 
     def reverse(self) -> None:
+        """Reverses the linked list in-place."""
         prev = None
         current = self.head
         while current:
@@ -49,6 +48,7 @@ class LinkedList:
 
     @staticmethod
     def merge(left, right):
+        """Merges two sorted linked lists into one sorted linked list."""
         merged_list = LinkedList()
         current_left_node = left.head
         current_right_node = right.head
@@ -70,6 +70,7 @@ class LinkedList:
         return merged_list
 
     def sort(self):
+        """Sorts the linked list in ascending order."""
         sorted_list = None
         current = self.head
         while current:
@@ -127,9 +128,18 @@ def main():
     l3 = LinkedList.merge(l1, l2)
     l3.print_list()
 
-    print("---------------")
-    l1.print_list()
-    l2.print_list()
+    print("-- Before reverse--")
+    l4 = LinkedList()
+    l4.append(1)
+    l4.append(2)
+    l4.append(3)
+    l4.append(4)
+    l4.append(5)
+    l4.print_list()
+
+    print("-- After reverse--")
+    l4.reverse()
+    l4.print_list()
 
 
 if __name__ == "__main__":
