@@ -57,7 +57,7 @@ def bfs_traversal(root, count=0):
                 queue.append(node.right)
 
 
-def create_tree() -> (Node, int):
+def create_tree() -> tuple[Node, int]:
     root = Node(0)
     root.left = Node(1)
     root.right = Node(2)
@@ -70,7 +70,7 @@ def create_tree() -> (Node, int):
 
 def main():
     tree_for_dfs, num_nodes = create_tree()
-    dfs_traversal(tree_for_dfs, 7)
+    dfs_traversal(tree_for_dfs, num_nodes)
     draw_tree(tree_for_dfs)
 
     tree_for_bfs, num_nodes = create_tree()
